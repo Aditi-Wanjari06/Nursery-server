@@ -18,7 +18,7 @@ const plants = [
     {
         "id": 2,
         "name": "Rose",
-        "category": "outdooe",
+        "category": "outdoor",
         "image": "https://i.pinimg.com/originals/ea/ad/49/eaad49ae493971341c54be47e9814d17.jpg",
         "price": 2000,
         "description": "Rose Plant"
@@ -200,6 +200,14 @@ app.delete("/plant/:id", (req, res) => {
         message: "Plant deleted successfully",
         data: null
     })
+})
+
+app.use("*",(req,res)=>{
+    res.send(`<div>
+        <h1 styl= "text-align: center;">
+        404 Not Found
+        </h1>
+        </div>`)
 })
 
 const PORT = process.env.PORT
